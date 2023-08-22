@@ -14,8 +14,7 @@ class MyRow extends StatelessWidget {
             border: Border.all(color: Colors.black, width: 1),
             borderRadius: BorderRadius.circular(1)),
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
+        child:
             // Container(
             //     padding: EdgeInsets.all(5),
             //     decoration: BoxDecoration(
@@ -48,28 +47,24 @@ class MyRow extends StatelessWidget {
             //     child: Text(data.isha)),
 
             Row(children: [
-              Text(data.fajr),
-              const SizedBox(
-                width: 10,
-              ),
-              Text(data.dhuhr),
-              const SizedBox(
-                width: 10,
-              ),
-              Text(data.asar),
-            ]),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(children: [
-              Text(data.maghrib),
-              const SizedBox(
-                width: 10,
-              ),
-              Text(data.isha),
-            ]),
-          ],
-        ),
+          Text(data.fajr),
+          const SizedBox(
+            width: 10,
+          ),
+          Text(data.dhuhr),
+          const SizedBox(
+            width: 10,
+          ),
+          Text(data.asar),
+          const SizedBox(
+            width: 10,
+          ),
+          Text(data.maghrib),
+          const SizedBox(
+            width: 10,
+          ),
+          Text(data.isha),
+        ]),
       ),
     );
   }

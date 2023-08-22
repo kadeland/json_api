@@ -21,12 +21,18 @@ class HomeState extends State {
       appBar: AppBar(
         title: const Text("api"),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () => getData()),
+      // floatingActionButton: FloatingActionButton(onPressed: () => getData()),
       body: Container(
-          padding: const EdgeInsets.all(10),
-          child: ListView.builder(
+        padding: const EdgeInsets.all(10),
+        child: ListView(children: [
+          ElevatedButton(onPressed: () => getData(), child: Text("get data")),
+          ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               itemCount: monthData.length,
-              itemBuilder: (context, index) => MyRow(monthData[index]))),
+              itemBuilder: (context, index) => MyRow(monthData[index])),
+        ]),
+      ),
     );
   }
 
