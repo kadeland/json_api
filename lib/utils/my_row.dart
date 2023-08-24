@@ -48,21 +48,13 @@ class MyRow extends StatelessWidget {
 
             Row(children: [
           Text(data.fajr),
-          const SizedBox(
-            width: 10,
-          ),
+          Spacer(),
           Text(data.dhuhr),
-          const SizedBox(
-            width: 10,
-          ),
+          Spacer(),
           Text(data.asar),
-          const SizedBox(
-            width: 10,
-          ),
+          Spacer(),
           Text(data.maghrib),
-          const SizedBox(
-            width: 10,
-          ),
+          Spacer(),
           Text(data.isha),
         ]),
       ),
