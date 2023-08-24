@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:json_api/screens/login_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../model/prayer.dart';
 import '../utils/my_Row.dart';
@@ -32,6 +34,8 @@ class HomeState extends State {
         padding: const EdgeInsets.all(10),
         child: ListView(children: [
           ElevatedButton(onPressed: () => getData(), child: Text("get data")),
+          ElevatedButton(
+              onPressed: () => logOut(), child: const Text("logout")),
           Row(
             children: [
               Spacer(),
@@ -67,5 +71,15 @@ class HomeState extends State {
     setState(() {
       monthData = Prayer.getMonthData(data);
     });
+  }
+
+  logOut() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool("LOGIN", false);
+
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => LoginScreen()),
+        (Route<dynamic> route) => false);
   }
 }
